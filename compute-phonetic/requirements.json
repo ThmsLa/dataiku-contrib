@@ -1,0 +1,5 @@
+{
+    "python" : [
+        {"name":"fuzzy", "version":">=1.2.2"}
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "meta" : {
+        "label" : "Compute phonetic keys",
+        "description" : "This recipe computes phonetic keys on the selected columns using the specified algorithm",
+        "icon" : "icon-comments-alt"
+    },
+
+    "kind" : "PYTHON",
+    
+    "selectableFromDataset" : "input",
+   
+    "inputRoles" : [
+        {
+            "name": "input",
+            "label": "Input dataset",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+
+    "outputRoles" : [
+        {
+            "name": "output",
+            "label": "Output dataset",
+            "arity": "UNARY",
+            "required": true,
+            "acceptsDataset": true
+        }
+    ],
+
+    "params": [
+        {
+            "name": "text_columns",
+            "label": "Columns",
+            "description": "Columns which contain the text to perform the phonetic algorithm on",
+            "type" : "COLUMNS",
+            "mandatory": true,
+            "columnRole" : "input"
+        },
+        {
+            "name" : "algorithm",
+            "label" : "Algorithm",
+            "type" : "SELECT",
+            "mandatory": true,
+            "selectChoices" : [
+                { "value" : "soundex", "label" : "Soundex"},
+                { "value" : "nysiis", "label" : "NYSIIS"},
+                { "value" : "dm", "label" : "Double Metaphone"}
+            ],
+            "defaultValue": "soundex"
+        },
+        {
+            "name": "soundex_length",
+            "label": "Soundex length",
+            "type": "INT",
+            "mandatory": true,
+            "defaultValue": 4,
+            "visibilityCondition" : "model.algorithm == 'soundex'"
+        }
+    ]
+
+}

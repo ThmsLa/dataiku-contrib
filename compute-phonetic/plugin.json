@@ -1,0 +1,14 @@
+{
+    "id" : "compute-phonetic",
+    "version" : "0.0.1",
+
+    "meta" : {
+        "label" : "Compute phonetic keys",
+        "description" : "This plugin contains a recipe to compute the phonetic keys (Soundex, NYSIIS, Double Metaphone) of rows using the Fuzzy library",
+        "author" : "Dataiku (Thomas Labadie)",
+        "icon" : "icon-comments-alt",
+        "licenseInfo" : "Apache Software License",
+        "url" : "https://www.dataiku.com",
+        "tags" : ["NLP", "Enrichment"]
+    }
+}
